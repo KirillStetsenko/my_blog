@@ -1,0 +1,16 @@
+<h1>Home</h1>
+
+<a href='/'>Home</a>
+<a href='/about'>About</a>
+<a href='/post'>Create post</a>
+<hr />
+{{#each blogs}}
+	<hr />
+	<a href='/posts/{{title}}'>
+		<p>{{title}}</p>
+		<p>{{desc}}</p>
+		<a href='/posts/delete/{{title}}'>Delete</a>
+	</a>
+	<hr />
+{{/each}}
+<hr />

@@ -1,0 +1,21 @@
+<h1>Create post</h1>
+{{#if isError}}
+	<p>Enter all fields</p>
+{{/if}}
+<form action='/' method='post'>
+	<div>
+		<input type='text' name='title' id='title' />
+		<label for='title'>Title</label>
+	</div>
+	<div>
+		<input type='text' name='desc' id='desc' />
+		<label for='desc'>Description</label>
+	</div>
+	<div>
+		<input type='text' name='article' id='article' />
+		<label for='article'>Article</label>
+	</div>
+	<button type='submit'>Create</button>
+</form>
+
+<a href='/'>Back</a>
