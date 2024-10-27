@@ -1,14 +1,22 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 import { MongoClient } from 'mongodb';
+import path from 'path';
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(path.resolve(), 'public')));
 
 const hbs = handlebars.engine({
 	defaultLayout: 'main',
 	extname: '.hbs',
 });
+
+app.engine('hbs', hbs);
+app.set('view engine', 'hbs');
+app.set('views', './views');
 
 const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
@@ -58,10 +66,6 @@ const deleteBlog = async (title) => {
 	}
 };
 
-app.engine('hbs', hbs);
-app.set('view engine', 'hbs');
-app.set('views', './view');
-
 app.get('/', async (req, res) => {
 	const blogs = await getData();
 	res.render('home', { blogs: blogs });
@@ -103,4 +107,4 @@ app.get('/posts/delete/:title', async (req, res) => {
 	res.render('delete', { title });
 });
 
-app.listen(3000, () => console.log('Server work at port 3000'));
+app.listen(PORT, () => console.log(`Server work at port ${PORT}`));
