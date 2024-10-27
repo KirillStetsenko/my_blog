@@ -1,25 +1,24 @@
-import express from 'express';
-import handlebars from 'express-handlebars';
-import { MongoClient } from 'mongodb';
-import path from 'path';
+const express = require('express');
+const exphbs = require('express-handlebars');
+const path = require('path');
+const mongodb = require('mongodb');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const hbs = exphbs.create({
+	extname: '.hbs',
+	defaultLayout: 'main',
+});
+
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(path.resolve(), 'public')));
 
-const hbs = handlebars.engine({
-	defaultLayout: 'main',
-	extname: '.hbs',
-});
-
-app.engine('hbs', hbs);
-app.set('view engine', 'hbs');
-app.set('views', './views');
-
 const url = 'mongodb://localhost:27017';
-const client = new MongoClient(url);
+const client = new mongodb.MongoClient(url);
 
 const getData = async () => {
 	try {
