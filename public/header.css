@@ -1,0 +1,31 @@
+.header {
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	background: #a1d8ff;
+}
+
+.header__logo {
+	font-size: 2em;
+	font-weight: 700;
+}
+
+.header__nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.header__nav-link {
+	padding: 10px;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: 500;
+	color: rgb(0, 0, 0);
+}
+
+.header__nav-link:hover {
+	color: rgb(255, 235, 18);
+}

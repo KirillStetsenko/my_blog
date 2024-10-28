@@ -3,24 +3,26 @@
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
-		<link rel='stylesheet' href='home.css' />
+		<link rel='stylesheet' href='/home.css' />
 	</head>
 	<body>
 		<main class='home'>
-			<hr />
-			<h1>Home</h1>
-
-			<hr />
-			{{#each blogs}}
-				<hr />
-				<a href='/posts/{{title}}'>
-					<p>{{title}}</p>
-					<p>{{desc}}</p>
-					<a href='/posts/delete/{{title}}'>Delete</a>
-				</a>
-				<hr />
-			{{/each}}
-			<hr />
+			<div class='posts'>
+				{{#each blogs}}
+					<div class='post'>
+						<a class='post__link-info' href='/posts/{{title}}'>
+							<p class='post__title'>{{title}}</p>
+						</a>
+						<p class='post__desc'>{{desc}}</p>
+						<p class='post__article'>{{article}}</p>
+						<a
+							class='post__link-delete'
+							href='/posts/delete/{{title}}'
+						>Delete</a>
+					</div>
+					<hr />
+				{{/each}}
+			</div>
 		</main>
 	</body>
 </html>

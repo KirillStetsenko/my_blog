@@ -1,21 +1,46 @@
-<h1>Create post</h1>
-{{#if isError}}
-	<p>Enter all fields</p>
-{{/if}}
-<form action='/' method='post'>
-	<div>
-		<input type='text' name='title' id='title' />
-		<label for='title'>Title</label>
-	</div>
-	<div>
-		<input type='text' name='desc' id='desc' />
-		<label for='desc'>Description</label>
-	</div>
-	<div>
-		<input type='text' name='article' id='article' />
-		<label for='article'>Article</label>
-	</div>
-	<button type='submit'>Create</button>
-</form>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Document</title>
+		<link rel='stylesheet' href='/create.css' />
+	</head>
+	<body>
+		<main class='create'>
+			<a class='link' href='/'>Back</a>
+			<p class='create__title'>Create post</p>
+			<form class='create__form' action='/' method='post'>
+				<div>
+					<label class='create__form-label' for='title'>Title</label>
+					<br />
+					<input
+						class='create__form-input'
+						type='text'
+						name='title'
+						id='title'
+					/>
+				</div>
+				<div>
+					<label class='create__form-label' for='desc'>Description</label>
+					<br />
+					<input class='create__form-input' type='text' name='desc' id='desc' />
+				</div>
+				<div>
+					<label class='create__form-label' for='article'>Article</label>
+					<br />
+					<input
+						class='create__form-input'
+						type='text'
+						name='article'
+						id='article'
+					/>
+				</div>
+				<button type='submit'>Create</button>
+			</form>
+			{{#if isError}}
+				<p class='error'>Enter all fields</p>
+			{{/if}}
 
-<a href='/'>Back</a>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+	background: #d3d3d3;
+}
+
+p {
+	margin: 1em;
+}
+
+strong {
+	color: rgb(0, 0, 255);
+}
+
+.link {
+	display: block;
+	margin: 0.5em;
+	width: min-content;
+	text-align: right;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: black;
+}
+
+.link:hover {
+	color: yellow;
+}
+
+.mongo {
+	color: #47a248;
+}
+
+.node {
+	color: #339933;
+}
+
+.handlebars {
+	color: #f0772b;
+}
