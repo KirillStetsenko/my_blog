@@ -24,7 +24,7 @@ const getData = async () => {
 	try {
 		await client.connect();
 
-		const db = client.db('test');
+		const db = client.db('blog');
 		const coll = db.collection('blogs');
 		return await coll.find().toArray();
 	} catch (error) {
@@ -35,7 +35,7 @@ const getData = async () => {
 const postData = async (title, desc, article) => {
 	try {
 		await client.connect();
-		const db = client.db('test');
+		const db = client.db('blog');
 		const coll = db.collection('blogs');
 		await coll.insertOne({ title, desc, article });
 	} catch (error) {
@@ -46,7 +46,7 @@ const postData = async (title, desc, article) => {
 const getBlog = async (title) => {
 	try {
 		await client.connect();
-		const db = client.db('test');
+		const db = client.db('blog');
 		const coll = db.collection('blogs');
 		return await coll.findOne({ title: title });
 	} catch (error) {
@@ -56,8 +56,8 @@ const getBlog = async (title) => {
 
 const deleteBlog = async (title) => {
 	try {
-		client.connect();
-		const db = client.db('test');
+		await client.connect();
+		const db = client.db('blog');
 		const coll = db.collection('blogs');
 		return await coll.findOneAndDelete({ title });
 	} catch (error) {

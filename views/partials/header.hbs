@@ -3,15 +3,39 @@
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
-		<link rel='stylesheet' href='header.css' />
+		<link rel='stylesheet' href='/styles/header.css' />
 	</head>
 	<body>
 		<header class='header'>
-			<div class='header__logo'>My Blog</div>
+			<a class='header__logo' href='/'>
+				<div>Oh my Blog</div>
+			</a>
 			<nav class='header__nav'>
 				<a class='header__nav-link' href='/'>Home</a>
 				<a class='header__nav-link' href='/about'>About</a>
 				<a class='header__nav-link' href='/post'>Create post</a>
+				<div class='toggle-container'>
+					<img src='/icons/light_icon.png' alt='dark_icon' width='25px' />
+					<label>
+						<input type='checkbox' />
+						<div class='toggle-switch'></div>
+					</label>
+					<img src='/icons/dark_icon.png' alt='light_icon' width='25px' />
+				</div>
+			</nav>
+			<nav class='burger__nav'>
+				<button class='burger__btn'><img
+						src='/icons/burger-bar.png'
+						alt='menu'
+						width='30px'
+					/></button>
+				<div class='burger__list'>
+					<div class='list'>
+						<a href='/'>Home</a>
+						<a href='/about'>About</a>
+						<a href='/post'>Create post</a>
+					</div>
+				</div>
 			</nav>
 		</header>
 	</body>

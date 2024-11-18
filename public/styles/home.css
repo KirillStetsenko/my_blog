@@ -1,0 +1,47 @@
+.post {
+	display: flex;
+	margin: 2em;
+	flex-direction: column;
+}
+
+.post__link-info {
+	text-decoration: none;
+}
+
+.post__link-delete {
+	align-self: flex-end;
+	text-decoration: none;
+	font-size: 1.3em;
+	transition: transform 0.1s;
+}
+
+.post__link-delete:hover {
+	transform: scale(1.2);
+}
+
+.post__title {
+	color: rgb(86 174 115);
+	margin: 10px 0;
+	font-size: 1.6em;
+	font-weight: 300;
+	text-indent: 1em;
+}
+
+.post__title:hover {
+	font-weight: 400;
+}
+
+.post__desc {
+	color: rgb(54 116 90);
+	margin: 10px 0;
+	font-size: 1.3em;
+	font-weight: 300;
+	text-indent: 2em;
+}
+
+.post__article {
+	margin: 0;
+	padding: 1em;
+	color: white;
+	font-weight: 300;
+}

@@ -1,13 +1,12 @@
-body {
-	background: #d3d3d3;
-}
-
-p {
+.aboutLis,
+.aboutPs {
 	margin: 1em;
+	color: white;
+	font-weight: 300;
 }
 
 strong {
-	color: rgb(0, 0, 255);
+	color: rgb(81, 81, 255);
 }
 
 .link {
@@ -17,7 +16,8 @@ strong {
 	text-align: right;
 	text-decoration: none;
 	font-size: 1.2em;
-	color: black;
+	font-weight: 300;
+	color: rgb(160, 160, 160);
 }
 
 .link:hover {
