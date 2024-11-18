@@ -68,17 +68,23 @@ const deleteBlog = async (title) => {
 app.get('/', async (req, res) => {
 	const blogs = await getData();
 	res.render('home', { blogs: blogs });
+	console.log(req.url);
 });
 
 app.get('/posts', (req, res) => {
 	res.redirect('/');
+	console.log(`${req.url} redirected to /`);
 });
 
 app.get('/post', async (req, res) => {
 	res.render('create');
+	console.log(req.url);
 });
 
-app.get('/about', (req, res) => res.render('about'));
+app.get('/about', (req, res) => {
+	res.render('about');
+	console.log(req.url);
+});
 
 app.post('/', async (req, res) => {
 	let { title, desc, article } = req.body;

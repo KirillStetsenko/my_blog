@@ -58,6 +58,7 @@
 	margin: 1em;
 	border: none;
 	background: none;
+	z-index: 100;
 }
 
 .burger__list {

@@ -11,16 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const burgerBtn = document.querySelector('.burger__btn');
 	const burgerList = document.querySelector('.burger__list');
 
-	const isOpenMenu = false;
+	let isOpenMenu = false;
 
 	burgerBtn.addEventListener('click', () => {
-		if (isOpenMenu) {
-			burgerList.style.display = 'none';
-			isOpenMenu = false;
-		} else {
-			burgerList.style.display = 'block';
-			isOpenMenu = true;
-		}
+		burgerList.style.display = isOpenMenu ? 'none' : 'block';
+		isOpenMenu = !isOpenMenu;
 	});
 
 	const applyTheme = (theme) => {
